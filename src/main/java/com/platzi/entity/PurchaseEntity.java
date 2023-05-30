@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 import java.time.LocalDateTime;
 
 @Entity
@@ -34,4 +35,11 @@ public class PurchaseEntity {
 
     @Column(name = "estado")
     private String state;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+    private ClientEntity client;
+
+    @OneToMany(mappedBy = "purchase")
+    private List<ProductPurchaseEntity> products;
 }

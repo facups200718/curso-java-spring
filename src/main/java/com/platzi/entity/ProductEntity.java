@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "productos")
@@ -36,4 +37,11 @@ public class ProductEntity {
 
     @Column(name = "estado")
     private Boolean state;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    private CategoryEntity category;
+
+    @OneToMany(mappedBy = "product")
+    private List<ProductPurchaseEntity> purchases;
 }
