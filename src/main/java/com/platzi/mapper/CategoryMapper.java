@@ -10,11 +10,9 @@ import org.mapstruct.Mappings;
 //Con componentModel estamos indicando que este component es de los que se usan con el framework Spring
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
-    @Mappings({
-            @Mapping(source = "categoryId", target = "categoryId"),
-            @Mapping(source = "description", target = "category"),
-            @Mapping(source = "state", target = "active")
-    })
+    @Mapping(source = "categoryId", target = "categoryId")
+    @Mapping(source = "description", target = "category")
+    @Mapping(source = "state", target = "active")
     CategoryDTO toCategoryDTO(CategoryEntity categoryEntity);
 
     //Hereda el mapeo de arriba y lo invierte

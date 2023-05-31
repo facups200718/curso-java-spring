@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Builder
 public class ProductPurchaseEntity {
     @EmbeddedId
-    private ProductSalePK id;
+    private ProductPurchasePK id;
 
     @Column(name = "cantidad")
     private Integer amount;
@@ -26,6 +26,7 @@ public class ProductPurchaseEntity {
     private Boolean state;
 
     @ManyToOne
+    @MapsId("purchaseId")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private PurchaseEntity purchase;
 

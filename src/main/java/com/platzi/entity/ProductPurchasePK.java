@@ -14,7 +14,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProductSalePK implements Serializable {
+public class ProductPurchasePK implements Serializable {
     @Column(name = "id_compra")
     private Integer purchaseId;
 

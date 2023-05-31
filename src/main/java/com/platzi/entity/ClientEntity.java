@@ -25,7 +25,7 @@ public class ClientEntity {
     private String surnames;
 
     @Column(name = "celular")
-    private Integer phoneNumber;
+    private Long phoneNumber;
 
     @Column(name = "direccion")
     private String address;

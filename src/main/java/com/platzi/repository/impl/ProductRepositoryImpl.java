@@ -28,24 +28,24 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     public List<ProductDTO> getAll() {
         List<ProductEntity> productEntityList = (List<ProductEntity>) productCrudRepository.findAll();
-        return productMapper.toProductDTOS(productEntityList);
+        return productMapper.toDTOs(productEntityList);
     }
     public Optional<List<ProductDTO>> getByCategoryId(Integer categoryId) {
         List<ProductEntity> productEntityList = productCrudRepository.findByCategoryIdOrderByNameAsc(categoryId);
-        return Optional.of(productMapper.toProductDTOS(productEntityList));
+        return Optional.of(productMapper.toDTOs(productEntityList));
     }
     public Optional<List<ProductDTO>> getByStockAndState(Integer stock, Boolean state) {
         Optional<List<ProductEntity>> productEntityList = productCrudRepository.findByStockLessThanAndState(stock, state);
-        return productEntityList.map(products -> productMapper.toProductDTOS(products));
+        return productEntityList.map(products -> productMapper.toDTOs(products));
     }
 
     public Optional<ProductDTO> getById(Integer productId) {
-        return productCrudRepository.findById(productId).map(product -> productMapper.toProductDTO(product));
+        return productCrudRepository.findById(productId).map(product -> productMapper.toDTO(product));
     }
 
     public ProductDTO save(ProductDTO productDTO) {
-        ProductEntity productEntity = productCrudRepository.save(productMapper.toProductEntity(productDTO));
-        return productMapper.toProductDTO(productEntity);
+        ProductEntity productEntity = productCrudRepository.save(productMapper.toEntity(productDTO));
+        return productMapper.toDTO(productEntity);
     }
 
     public void delete(Integer productId) {

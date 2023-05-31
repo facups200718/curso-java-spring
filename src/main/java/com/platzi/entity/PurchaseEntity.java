@@ -40,6 +40,9 @@ public class PurchaseEntity {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private ClientEntity client;
 
-    @OneToMany(mappedBy = "purchase")
+    //Con el cascade = CascadeType.ALL estamos indicando que si hacemos una modificacion a un elemento de la lista
+    //de productos del PurchaseEntity (entidad padre), se van a afectar las tablas que representadas por las
+    //entidades hijas ProductPurchaseEntity, como si fuera una estructura jerarquica en "cascada"
+    @OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL)
     private List<ProductPurchaseEntity> products;
 }
