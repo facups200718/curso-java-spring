@@ -1,13 +1,14 @@
 package com.platzi.repository;
+import com.platzi.dto.ProductDTO;
 
-import com.platzi.entity.ProductEntity;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-public interface ProductRepository extends CrudRepository<ProductEntity, Integer> {
-    List<ProductEntity> findByCategoryIdOrderByNameAsc(Integer categoryId);
-    Optional<List<ProductEntity>> findByStockLessThanAndState(Integer stock, Boolean state);
+public interface ProductRepository {
+    List<ProductDTO> getAll();
+    Optional<List<ProductDTO>> getByCategoryId(Integer categoryId);
+    Optional<List<ProductDTO>> getByStockAndState(Integer stock, Boolean state);
+    Optional<ProductDTO> getById(Integer productId);
+    ProductDTO save(ProductDTO product);
+    void delete(Integer productId);
 }
