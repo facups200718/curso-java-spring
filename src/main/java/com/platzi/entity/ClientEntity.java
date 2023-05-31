@@ -10,10 +10,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "clientes")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class ClientEntity {
     @Id
     private String id;
@@ -35,4 +31,60 @@ public class ClientEntity {
 
     @OneToMany(mappedBy = "client")
     private List<PurchaseEntity> purchases;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurnames() {
+        return surnames;
+    }
+
+    public void setSurnames(String surnames) {
+        this.surnames = surnames;
+    }
+
+    public Long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(Long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<PurchaseEntity> getPurchases() {
+        return purchases;
+    }
+
+    public void setPurchases(List<PurchaseEntity> purchases) {
+        this.purchases = purchases;
+    }
 }
