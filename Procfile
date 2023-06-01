@@ -1,1 +1,1 @@
-web: java -jar target/platzi-market-1.0.0.jar
+web: java -jar $JAVA_OPTS -Dserver.port=$PORT target/platzi-market-1.0.0.jar
