@@ -1,4 +1,4 @@
-use products;
+use euuq2kmf6akoioay;
 
 -- CATEGORIAS
 INSERT INTO categorias VALUES (1, 'Frutas y verduras', 1);
@@ -67,12 +67,14 @@ INSERT INTO clientes VALUES ('2552243', 'Galileo', 'Galilei', 3462257293, 'Cl 1 
 INSERT INTO clientes VALUES ('983824', 'Nicolás', 'Copernico', 3019392466, 'Cl 2 # 22 - 22', 'nico@cope.com');
 
 -- COMPRA
-INSERT INTO compras VALUES (1, '4546221', '1992-08-10 17:30:00', 'E', '', 'P');
-INSERT INTO compras_productos VALUES (1, 1, 10, 3000, 1);
-INSERT INTO compras_productos VALUES (1, 36, 1, 40000, 1);
-INSERT INTO compras_productos VALUES (1, 27, 1, 9000, 1);
-INSERT INTO compras_productos VALUES (1, 49, 2, 16400, 1);
-INSERT INTO compras_productos VALUES (1, 24, 1, 4000, 1);
+INSERT INTO compras VALUES ('4546221', '1992-08-10 17:30:00', 'E', '', 'P');
+
+
+INSERT INTO compras_productos VALUES (1, 1, 10, 1, 3000);
+INSERT INTO compras_productos VALUES (36, 1, 1, 1, 40000);
+INSERT INTO compras_productos VALUES (27, 1, 1, 1, 9000);
+INSERT INTO compras_productos VALUES (49, 1, 2, 1, 16400);
+INSERT INTO compras_productos VALUES (24, 1, 1, 1, 4000);
 
 -- SE REINICIAN LAS SECUENCIAS SEGÚN LOS DATOS INICIALES
 -- Para la secuencia 'public.productos_id_producto_seq'

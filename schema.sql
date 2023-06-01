@@ -1,6 +1,6 @@
-drop database products;
-create database products;
-use products;
+drop database euuq2kmf6akoioay;
+create database euuq2kmf6akoioay;
+use euuq2kmf6akoioay;
 
 CREATE TABLE  CATEGORIAS (
   id_categoria INT NOT NULL AUTO_INCREMENT,
