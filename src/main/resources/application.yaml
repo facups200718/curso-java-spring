@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/products?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-    username: root
-    password: 123Huellita$
+    url: jdbc:mysql://yjo6uubt3u5c16az.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/euuq2kmf6akoioay
+    username: upfp26j1httg7gww
+    password: lwm0n1t6o2piop6s
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
